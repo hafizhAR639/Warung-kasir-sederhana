@@ -1,0 +1,95 @@
+import java.util.Scanner;
+public class Kasir {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        int pilih=0;
+        int pilah=0;
+        int pemilih=0;
+        int harga = 0, jumlah = 0;
+        double diskon;
+        double total;
+        
+        System.out.println("Program Kasir Warung sederhana");
+        System.out.println("1.Sate,2.Pecel,3.Penyetan.");
+        System.out.print("Pilih makanan = ");
+        pilih = s.nextInt();
+        switch (pilih) {
+            case 1:
+                System.out.println("Sate ayam [Rp.1.500,-/tusuk], Sate Kambing [Rp.3.000,-/tusuk] ");
+                System.out.print("pilih = ");
+                pilah = s.nextInt();
+                if (pilah == 1){
+                    System.out.print("Jumlah tusuk sate = ");
+                    jumlah = s.nextInt();
+                    harga = 1500;
+                    
+                }
+                else if (pilah == 2){
+                    System.out.print("Jumlah tusuk sate = ");
+                    jumlah = s.nextInt();
+                    harga = 3000;
+                    
+                }
+                else {
+                    System.out.println("Input tidak valid");
+                }
+            case 2:
+                System.out.println("Lauk ayam [Rp.13.000/porsi], Lauk empal [Rp.15.000/porsi] ");
+                System.out.print("pilih = ");
+                pilah = s.nextInt();
+                if (pilah == 1){
+                    System.out.print("Jumlah porsi = ");
+                    jumlah = s.nextInt();
+                    harga = 13000;
+                    
+                }
+                else if (pilah == 2){
+                    System.out.print("Jumlah porsi = ");
+                    jumlah = s.nextInt();
+                    harga = 15000;
+                    
+                }
+                else {
+                  System.out.println("Input tidak valid");  
+                }
+                case 3:
+                  System.out.println("Lauk tahu/tempe [Rp.5.000/porsi], Lauk telur [Rp.7.000/porsi], Lauk ayam [Rp.10.000,-/porsi] ");
+                System.out.print("pilih = ");
+                pilah = s.nextInt();
+                if (pilah == 1){
+                    System.out.print("Jumlah porsi = ");
+                    jumlah = s.nextInt();
+                    harga = 5000;
+                    
+                }
+                else if (pilah == 2){
+                    System.out.print("Jumlah porsi = ");
+                    jumlah = s.nextInt();
+                    harga = 7000;
+                    
+                }
+                else if (pilah == 3) {
+                    System.out.print("Jumlah porsi = ");
+                    jumlah = s.nextInt();
+                    harga = 10000;
+                    total = harga*jumlah;
+                    
+                }
+                else {
+                    System.out.println("Input tidak valid");
+                }
+         total = harga*jumlah;
+                    System.out.println("Apakah anda memiliki kartu member?masukkan angka ((1).ya/(2).tidak");
+                    pemilih = s.nextInt();
+                    if (pemilih == 1) {
+                        diskon = total * 0.05; 
+                        total = total - diskon;
+                        System.out.println("Anda mendapatkan diskon 5%. Diskon sebesar: Rp." + diskon);
+                    }
+                    System.out.println("Harga total nya: Rp."+ total);
+        }
+    }
+    
+}
